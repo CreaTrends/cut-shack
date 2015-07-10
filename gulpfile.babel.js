@@ -2,6 +2,7 @@
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
+import notify from 'gulp-notify';
 import del from 'del';
 import {stream as wiredep} from 'wiredep';
 
@@ -10,12 +11,19 @@ const reload = browserSync.reload;
 
 gulp.task('styles', () => {
   return gulp.src('app/styles/*.scss')
-    .pipe($.plumber())
+    .pipe($.plumber({
+    errorHandler: notify.onError({
+        sound: 'Purr',
+        title: "Sass Error:",
+        message:  "<%= error.message %>"})
+    }))
     .pipe($.sourcemaps.init())
     .pipe($.sass.sync({
       outputStyle: 'expanded',
       precision: 10,
-      includePaths: ['.']
+      compress: false,
+      linenos: false,
+      includePaths: require('node-bourbon').includePaths
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer({browsers: ['last 1 version']}))
     .pipe($.sourcemaps.write())

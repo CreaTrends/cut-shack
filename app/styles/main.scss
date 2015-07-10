@@ -1,6 +1,13 @@
 // bower:scss
 // endbower
 
+@import "bourbon";
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background: #fafafa;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -32,7 +39,26 @@ body {
 
 
 .hero {
-  background: url('images/hero.jpg') no-repeat center center;
+  background: url('/images/hero.jpg') no-repeat center center;
   background-size: cover;
-  height: 50vh;
+  height: 500px;
+  position: relative;
+
+  .cut-logo {
+    @include transform(translateY(-50%));
+    display: block;
+    height: 79px;
+    right: 10%;
+    position: absolute;
+    top: 50%;
+    width: 110px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .highlights {
+    background: #D8D8D8;
+  }
 }
