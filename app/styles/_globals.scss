@@ -8,6 +8,14 @@ $baloo: #40bad0;
 $squee: #e19787;
 $slate: #303030;
 
+.baloo-text {
+    color: $baloo;
+}
+
+.slate-text {
+    color: $slate;
+}
+
 // MIXINS
 
 // rem font sizing with backup px

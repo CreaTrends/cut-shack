@@ -19,9 +19,12 @@ html, body {
 }
 
 body {
-  background: #fafafa;
+  @include font-size(1.8);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: white;
+  color: $carl;
   font-family: $walsheim-reg;
-  color: #333;
 }
 
 .browserupgrade {
@@ -32,8 +35,13 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  color: $slate;
   font-family: $walsheim-light;
   font-weight: normal;
+}
+
+a {
+  text-decoration: none;
 }
 
 section {
@@ -47,13 +55,13 @@ section {
       width: 100%;
     }
 
-    h2 {
+    h2, h3 {
       @include font-size(1.8);
-      margin: 0;
+      margin: 0 0 22px;
     }
 
-    h3 {
-      @include font-size(1.8);
+    .row {
+      margin-bottom: 25px;
     }
 
     ul {
@@ -70,12 +78,79 @@ section {
 
         a {
           @include calc(width, "100% - 22px");
-          background: black;
+          background: $carl;
           display: block;
           height: 100%;
           left: 0;
           position: absolute;
           top: 0;
+
+          .thumb {
+            background: white;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            height: 70%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+          }
+
+          .caption {
+            background: $carl;
+            bottom: 0;
+            display: block;
+            left: 0;
+            padding: 18px 24px;
+            position: absolute;
+            width: 100%;
+
+            &.ness {
+              background: $ness;
+            }
+            &.baloo {
+              background: $baloo;
+            }
+            &.squee {
+              background: $squee;
+            }
+            &.pi {
+              background: $pi;
+            }
+            &.knox {
+              background: $knox;
+            }
+            &.carl {
+              background: $carl;
+            }
+          }
+
+          .topper {
+            @include clearfix;
+          }
+
+          .cat, .ep {
+            @include font-size(1.2);
+            font-family: $walsheim-light;
+          }
+
+          .cat {
+            color: $slate;
+            float: left;
+          }
+
+          .ep {
+            color: rgba($slate, .55); 
+            float: right;
+          }
+
+          .title {
+            color: white;
+            display: block;
+            font-family: $walsheim-reg;
+            padding: 2px 0 0;
+          }
 
         }
 
@@ -105,11 +180,18 @@ section {
   height: 500px;
   position: relative;
 
+  .center {
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    width: 780px;
+  }
+
   .cut-logo {
     @include transform(translateY(-50%));
     display: block;
     height: 79px;
-    right: 10%;
+    right: 0;
     position: absolute;
     top: 50%;
     width: 110px;
@@ -122,31 +204,64 @@ section {
 
 .highlights {
   background: $carl;
+  height: 240px;
   position: relative;
 
   .center {
-    @include transform(translateY(-50px));
+    @include transform(translateY(-80px));
+    margin-bottom: -50px;
   }
 
   h2 {
     color: $carl;
+  }
+
+  .row {
+    margin: 0;
   }
 
 }
 
 .series {
+  padding: 25px 0 70px;
+
   h2 {
-    color: $carl;
+    color: #ccc;
     text-align: center;
   }
   .cut-blurb {
+    color: #ccc;
+    padding-top: 60px;
     text-align: center;
+
+    .baloo-text, .slate-text {
+      display: block;
+      font-family: $walsheim-bold;
+    }
+
+    a {
+      color: $ness;
+      font-family: $walsheim-bold;
+    }
   }
 }
 
 .site-footer {
+  @include font-size(1);
   background: url('/images/footer.jpg') no-repeat center center;
   background-size: cover;
   height: 400px;
+  position: relative;
+
+  .disclaimer {
+    bottom: 25px;
+    left: 25px;
+    position: absolute;
+    width: 250px;
+
+    a {
+      color: $carl;
+    }
+  }
 }
 
