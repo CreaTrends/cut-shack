@@ -73,6 +73,7 @@ section {
       li {
         display: block;
         float: left;
+        overflow: hidden;
         padding-top: 30.5%;
         position: relative;
         width: 33.3333% ;
@@ -99,6 +100,7 @@ section {
           }
 
           .caption {
+            @include transition(all 0.2s ease-out);
             background: $carl;
             bottom: 0;
             display: block;
@@ -147,10 +149,17 @@ section {
           }
 
           .title {
+            @include transition(color 0.2s ease-out);
             color: white;
             display: block;
             font-family: $walsheim-reg;
             padding: 2px 0 0;
+          }
+
+          &:hover {
+            .caption {
+              padding: 22px 24px;
+            }
           }
 
         }
@@ -231,6 +240,9 @@ section {
 
   .cut-logo {
     @include transform(translateY(-50%));
+    @include transition(opacity 0.2s ease-in-out);
+    -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+    backface-visibility: hidden;
     display: block;
     height: 79px;
     right: 0;
@@ -252,6 +264,10 @@ section {
 
     img {
       width: 100%;
+    }
+
+    &:hover {
+      @include opacity(.9);
     }
   }
 }
@@ -302,8 +318,13 @@ section {
     }
 
     a {
+      @include transition(color 0.2s ease-in-out);
       color: $ness;
       font-family: $walsheim-bold;
+
+      &:hover {
+        color: $slate;
+      }
     }
   }
 }
@@ -339,7 +360,12 @@ section {
     }
 
     a {
+      @include transition(color 0.2s ease-in-out);
       color: $carl;
+
+      &:hover {
+        color: $slate;
+      }
     }
   }
 }
