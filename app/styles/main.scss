@@ -2,11 +2,12 @@
 // endbower
 
 @import "bourbon";
-@import "colors";
 @import "typo";
+@import "globals";
 
 html {
   box-sizing: border-box;
+  font-size: 62.5%;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -30,6 +31,11 @@ body {
   padding: 0.2em 0;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: $walsheim-light;
+  font-weight: normal;
+}
+
 section {
   position: relative;
 
@@ -42,7 +48,12 @@ section {
     }
 
     h2 {
+      @include font-size(1.8);
       margin: 0;
+    }
+
+    h3 {
+      @include font-size(1.8);
     }
 
     ul {
@@ -110,7 +121,7 @@ section {
 }
 
 .highlights {
-  background: $pi;
+  background: $carl;
   position: relative;
 
   .center {
@@ -118,14 +129,14 @@ section {
   }
 
   h2 {
-    color: $pi;
+    color: $carl;
   }
 
 }
 
 .series {
   h2 {
-    color: $pi;
+    color: $carl;
     text-align: center;
   }
   .cut-blurb {
