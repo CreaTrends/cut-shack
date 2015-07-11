@@ -2,6 +2,15 @@
 // endbower
 
 @import "bourbon";
+@import "colors";
+@import "typo";
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
 html, body {
   margin: 0;
@@ -31,6 +40,10 @@ section {
     @media screen and (max-width: 780px) {
       width: 100%;
     }
+
+    h2 {
+      margin: 0;
+    }
   }
 }
 
@@ -57,10 +70,56 @@ section {
 }
 
 .highlights {
-  background: #D8D8D8;
+  background: $alto;
+  position: relative;
+
+  .center {
+    @include transform(translateY(-50px));
+  }
+
+  h2 {
+    color: $alto;
+  }
 
   ul {
+    @include clearfix;
+    margin: 0;
+    padding: 0;
 
+    li {
+      background: orange;
+      display: block;
+      float: left;
+      padding-top: 30.5%;
+      position: relative;
+      width: 33.3333% ;
+
+      a {
+        @include calc(width, "100% - 22px");
+        background: red;
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+
+      }
+
+      &:nth-child(2) {
+        a {
+          @include calc(width, "100% - 12px");
+          @include transform(translateX(-50%));
+          left: 50%;
+        }  
+      }
+
+      &:last-child {
+        a {
+          left: auto;
+          right: 0;
+        }
+      }
+    }
   }
 }
 
