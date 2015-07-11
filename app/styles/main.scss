@@ -175,7 +175,7 @@ section {
 
 
 .hero {
-  background: url('/images/hero.jpg') no-repeat center center;
+  background: url('../images/hero.jpg') no-repeat center center;
   background-size: cover;
   height: 500px;
   position: relative;
@@ -248,7 +248,7 @@ section {
 
 .site-footer {
   @include font-size(1);
-  background: url('/images/footer.jpg') no-repeat center center;
+  background: url('../images/footer.jpg') no-repeat center center;
   background-size: cover;
   height: 400px;
   position: relative;
