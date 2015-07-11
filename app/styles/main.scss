@@ -52,6 +52,7 @@ section {
     width: 780px;
 
     @media screen and (max-width: 780px) {
+      padding: 0 20px;
       width: 100%;
     }
 
@@ -65,9 +66,9 @@ section {
     }
 
     ul {
-    @include clearfix;
-    margin: 0;
-    padding: 0;
+      @include clearfix;
+      margin: 0;
+      padding: 0;
 
       li {
         display: block;
@@ -168,6 +169,36 @@ section {
             right: 0;
           }
         }
+
+        @media screen and (max-width: 640px) {
+          float: none;
+          padding-top: 80%;
+          position: relative;
+          margin-bottom: 25px;
+          width: 100%;
+
+          a {
+            left: 0;
+            right: auto;
+            top: 0;
+            width: 100% !important;
+
+            .thumb {
+              height: 85%;
+            }
+          }
+
+          &:nth-child(2) {
+            a {
+              @include transform(translateX(0));
+              left: auto;
+            }  
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
       }
     }
   }
@@ -180,12 +211,23 @@ section {
   height: 500px;
   position: relative;
 
+  @media screen and (max-width: 640px) {
+    height: 370px;
+  }
+
   .center {
     height: 100%;
     margin: 0 auto;
     position: relative;
     width: 780px;
+
+    @media screen and (max-width: 780px) {
+      width: 100%;
+    }
+
+
   }
+
 
   .cut-logo {
     @include transform(translateY(-50%));
@@ -195,6 +237,18 @@ section {
     position: absolute;
     top: 50%;
     width: 110px;
+
+    @media screen and (max-width: 780px) {
+      right: 20px;
+    }
+
+    @media screen and (max-width: 640px) {
+      @include transform(translateX(-50%) translateY(-52%));
+      height: 158px;
+      left: 50%;
+      right: auto;
+      width: 220px;
+    }
 
     img {
       width: 100%;
@@ -207,18 +261,24 @@ section {
   height: 240px;
   position: relative;
 
+  @media screen and (max-width: 640px) {
+    height: auto;
+  }
+
   .center {
     @include transform(translateY(-80px));
-    margin-bottom: -50px;
+    // margin-bottom: -50px;
+
+    .row {
+      margin: 0;
+    }
   }
 
   h2 {
     color: $carl;
   }
 
-  .row {
-    margin: 0;
-  }
+  
 
 }
 
@@ -226,11 +286,11 @@ section {
   padding: 25px 0 70px;
 
   h2 {
-    color: #ccc;
+    color: #888;
     text-align: center;
   }
   .cut-blurb {
-    color: #ccc;
+    color: #888;
     padding-top: 60px;
     margin: 0 auto;
     width: 325px;
@@ -260,6 +320,23 @@ section {
     left: 25px;
     position: absolute;
     width: 250px;
+
+    @media screen and (max-width: 780px) {
+      text-align: right;
+      left: auto;
+      right: 20px;
+      bottom: 20%;
+    }
+
+    @media screen and (max-width: 640px) {
+      @include transform(translateX(-50%));
+      bottom: auto;
+      left: 50%;
+      right: auto;
+      text-align: left;
+      top: 10%;
+      width: 70%;
+    }
 
     a {
       color: $carl;
