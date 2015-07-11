@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'gt_walsheimregular';
+    src: url('/fonts/gt-walsheim-regular-webfont.eot');
+    src: url('/fonts/gt-walsheim-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/gt-walsheim-regular-webfont.woff2') format('woff2'),
+         url('/fonts/gt-walsheim-regular-webfont.woff') format('woff'),
+         url('/fonts/gt-walsheim-regular-webfont.ttf') format('truetype'),
+         url('/fonts/gt-walsheim-regular-webfont.svg#gt_walsheimregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gt_walsheimlight';
+    src: url('/fonts/gt-walsheim-light-webfont.eot');
+    src: url('/fonts/gt-walsheim-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/gt-walsheim-light-webfont.woff2') format('woff2'),
+         url('/fonts/gt-walsheim-light-webfont.woff') format('woff'),
+         url('/fonts/gt-walsheim-light-webfont.ttf') format('truetype'),
+         url('/fonts/gt-walsheim-light-webfont.svg#gt_walsheimlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'gt_walsheimbold';
+    src: url('/fonts/gt-walsheim-bold-webfont.eot');
+    src: url('/fonts/gt-walsheim-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/gt-walsheim-bold-webfont.woff2') format('woff2'),
+         url('/fonts/gt-walsheim-bold-webfont.woff') format('woff'),
+         url('/fonts/gt-walsheim-bold-webfont.ttf') format('truetype'),
+         url('/fonts/gt-walsheim-bold-webfont.svg#gt_walsheimbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+$walsheim-reg: gt_walsheimregular, Helvetica Neue, Helvetica, sans-serif;
+$walsheim-light: gt_walsheimlight, Helvetica Neue, Helvetica, sans-serif;
+$walsheim-bold: gt_walsheimbold, Helvetica Neue, Helvetica, sans-serif;

@@ -19,7 +19,7 @@ html, body {
 
 body {
   background: #fafafa;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: $walsheim-reg;
   color: #333;
 }
 
@@ -43,6 +43,46 @@ section {
 
     h2 {
       margin: 0;
+    }
+
+    ul {
+    @include clearfix;
+    margin: 0;
+    padding: 0;
+
+      li {
+        display: block;
+        float: left;
+        padding-top: 30.5%;
+        position: relative;
+        width: 33.3333% ;
+
+        a {
+          @include calc(width, "100% - 22px");
+          background: black;
+          display: block;
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+
+        }
+
+        &:nth-child(2) {
+          a {
+            @include calc(width, "100% - 12px");
+            @include transform(translateX(-50%));
+            left: 50%;
+          }  
+        }
+
+        &:last-child {
+          a {
+            left: auto;
+            right: 0;
+          }
+        }
+      }
     }
   }
 }
@@ -70,7 +110,7 @@ section {
 }
 
 .highlights {
-  background: $alto;
+  background: $pi;
   position: relative;
 
   .center {
@@ -78,52 +118,16 @@ section {
   }
 
   h2 {
-    color: $alto;
+    color: $pi;
   }
 
-  ul {
-    @include clearfix;
-    margin: 0;
-    padding: 0;
-
-    li {
-      background: orange;
-      display: block;
-      float: left;
-      padding-top: 30.5%;
-      position: relative;
-      width: 33.3333% ;
-
-      a {
-        @include calc(width, "100% - 22px");
-        background: red;
-        display: block;
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-
-      }
-
-      &:nth-child(2) {
-        a {
-          @include calc(width, "100% - 12px");
-          @include transform(translateX(-50%));
-          left: 50%;
-        }  
-      }
-
-      &:last-child {
-        a {
-          left: auto;
-          right: 0;
-        }
-      }
-    }
-  }
 }
 
 .series {
+  h2 {
+    color: $pi;
+    text-align: center;
+  }
   .cut-blurb {
     text-align: center;
   }
