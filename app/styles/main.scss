@@ -132,6 +132,18 @@ section {
                 background: rgba($knox, .5);
               }
             }
+
+            &.squee {
+              &:after {
+                background: rgba($squee, .5);
+              }
+            }
+
+            &.baloo {
+              &:after {
+                background: rgba($baloo, .5);
+              }
+            }
           }
 
           .caption {
@@ -375,7 +387,6 @@ section {
 }
 
 .highlights {
-  // background: $carl;
   height: 5%;
   position: relative;
 
@@ -386,6 +397,7 @@ section {
   .center {
     @include transform(translateY(-80px));
     padding: 0 7%;
+    position: relative;
 
     .row {
       margin: 0;
@@ -394,8 +406,14 @@ section {
 
   h2 {
     color: $carl;
+    display: inline-block;
   }
 
+  .g-ytsubscribe, #___ytsubscribe_0 {
+    position: absolute;
+    top: 0;
+    right: 8%;
+  }
   
 
 }
