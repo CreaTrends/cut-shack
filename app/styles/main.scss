@@ -360,22 +360,35 @@ section {
 
 .site-footer {
   @include font-size(1);
-  background: url('../images/footer.jpg') no-repeat center center;
+  background: url('../images/footer-hand.jpg') no-repeat center bottom;
   background-size: cover;
-  height: 400px;
+  height: 646px;
   position: relative;
 
-  .disclaimer {
-    bottom: 25px;
-    left: 25px;
-    position: absolute;
-    width: 250px;
+  @media screen and (min-width: 701px) and (max-width: 1075px) {
+    height: 500px;
+  }
 
-    @media screen and (max-width: 780px) {
-      text-align: right;
-      left: auto;
-      right: 20px;
-      bottom: 20%;
+  @media screen and (max-width: 700px) {
+    height: 400px;
+  }
+
+  .disclaimer {
+    @include transform(translateX(-50%));
+    color: $slate;
+    bottom: 15px;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    width: 50%;
+
+    p {
+      margin: 0;
+    }
+
+    @media screen and (min-width: 701px) and (max-width: 1075px) {
+      bottom: 10px;
+      width: 80%;
     }
 
     @media screen and (max-width: 700px) {
@@ -388,9 +401,14 @@ section {
       width: 70%;
     }
 
+    strong {
+      font-family: $walsheim-bold;
+      font-weight: normal;
+    }
+
     a {
       @include transition(color 0.2s ease-in-out);
-      color: $carl;
+      color: $ness;
 
       &:hover {
         color: $slate;
