@@ -343,7 +343,7 @@ section {
   .cut-logo {
     @include transform(translateY(-50%));
     @include transition(opacity 0.2s ease-in-out);
-    -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     display: block;
     height: 79px;
@@ -369,7 +369,7 @@ section {
     }
 
     &:hover {
-      @include opacity(.9);
+      @include opacity(.85);
     }
   }
 }
