@@ -80,6 +80,8 @@ section {
 
         a {
           @include calc(width, "100% - 22px");
+          -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+          backface-visibility: hidden;
           display: block;
           height: 100%;
           left: 0;
@@ -88,6 +90,7 @@ section {
           top: 0;
 
           .thumb {
+            @include transition(all .2s ease-in-out);
             background: white;
             background-repeat: no-repeat;
             background-position: center center;
@@ -97,6 +100,38 @@ section {
             position: absolute;
             top: 0;
             width: 100%;
+
+            &:after {
+              @include opacity(0);
+              @include transition(opacity 0.2s ease-in-out);
+              background: rgba($carl, .5);
+              content: "";
+              display: block;
+              height: 100%;
+              left: 0;
+              position: absolute;
+              top: 0;
+              width: 100%;
+              z-index: 2;
+            }
+
+            &.ness {
+              &:after {
+                background: rgba($ness, .5);
+              }
+            }
+
+            &.pi {
+              &:after {
+                background: rgba($pi, .5);
+              }
+            }
+
+            &.knox {
+              &:after {
+                background: rgba($knox, .5);
+              }
+            }
           }
 
           .caption {
@@ -108,6 +143,7 @@ section {
             padding: 18px 24px;
             position: absolute;
             width: 100%;
+            z-index: 3;
 
             &.ness {
               background: $ness;
@@ -144,8 +180,34 @@ section {
           }
 
           .ep {
-            color: rgba($slate, .55); 
+            background: rgba($ness, .2);
+            color: rgba($slate, .6); 
             float: right;
+            display: block;
+            position: relative;
+            width: 20%;
+
+            summary, mark {
+              position: absolute;
+              top: 0;
+              right: 0;
+            }
+
+            summary {
+              @include transition(all 0.2s ease-in-out);
+              @include opacity(1);
+              @include transform(translateY(0));
+            }
+
+            mark {
+              @include transition(all 0.2s ease-in-out);
+              @include opacity(0);
+              @include transform(translateY(20px));
+              background: url(../images/svg/youtube-play.svg) no-repeat center center;
+              display: block;
+              height: 19px;
+              width: 26px;
+            }
           }
 
           .title {
@@ -157,8 +219,24 @@ section {
           }
 
           &:hover {
+            .thumb {
+              &:after {
+                @include opacity(1);
+              }
+            }
+
             .caption {
               padding: 22px 24px;
+
+              summary {
+                @include opacity(0);
+                @include transform(translateY(-20px));
+              }
+
+              mark {
+                @include opacity(1);
+                @include transform(translateY(-1px));
+              }
             }
           }
 
@@ -359,7 +437,7 @@ section {
 }
 
 .site-footer {
-  @include font-size(1);
+  @include font-size(.9);
   background: url('../images/footer-hand.jpg') no-repeat center bottom;
   background-size: cover;
   height: 646px;
