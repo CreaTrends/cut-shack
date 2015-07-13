@@ -22,7 +22,7 @@ body {
   @include font-size(1.8);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: white;
+  background: $slate;
   color: $carl;
   font-family: $walsheim-reg;
 }
@@ -49,7 +49,7 @@ section {
 
   .center {
     margin: 0 auto;
-    width: 780px;
+    width: 90%;
 
     @media screen and (max-width: 780px) {
       padding: 0 20px;
@@ -80,10 +80,10 @@ section {
 
         a {
           @include calc(width, "100% - 22px");
-          background: $carl;
           display: block;
           height: 100%;
           left: 0;
+          overflow: hidden;
           position: absolute;
           top: 0;
 
@@ -166,9 +166,17 @@ section {
 
         &:nth-child(2) {
           a {
-            @include calc(width, "100% - 12px");
+            @include calc(width, "100% - 11px");
             @include transform(translateX(-50%));
             left: 50%;
+
+            .thumb {
+              width: 99.9%;
+            }
+
+            .caption {
+              width: 100.3%;
+            }
           }  
         }
 
@@ -177,6 +185,22 @@ section {
             left: auto;
             right: 0;
           }
+        }
+
+        @media screen and (min-width: 1500px) {
+          a {
+            .thumb {
+              height: 100%;
+            }
+          } 
+        }
+
+        @media screen and (min-width: 1000px) and (max-width: 1499px) {
+          a {
+            .thumb {
+              height: 90%;
+            }
+          } 
         }
 
         @media screen and (max-width: 640px) {
@@ -228,7 +252,7 @@ section {
     height: 100%;
     margin: 0 auto;
     position: relative;
-    width: 780px;
+    width: 90%;
 
     @media screen and (max-width: 780px) {
       width: 100%;
@@ -273,8 +297,8 @@ section {
 }
 
 .highlights {
-  background: $carl;
-  height: 240px;
+  // background: $carl;
+  height: 5%;
   position: relative;
 
   @media screen and (max-width: 640px) {
@@ -283,7 +307,7 @@ section {
 
   .center {
     @include transform(translateY(-80px));
-    // margin-bottom: -50px;
+    padding: 0 7%;
 
     .row {
       margin: 0;
@@ -299,7 +323,12 @@ section {
 }
 
 .series {
-  padding: 25px 0 70px;
+  margin-bottom: 65px;
+  
+  .center {
+    background: white;
+    padding: 25px 7% 70px;
+  }
 
   h2 {
     color: #888;
