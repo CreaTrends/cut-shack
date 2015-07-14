@@ -464,6 +464,8 @@ section {
         width: 22px;
 
         a {
+          @include transition(all .2s ease-in-out);
+          @include opacity(1);
           display: inline-block;
           height: 100%;
           width: 100%;
@@ -475,6 +477,10 @@ section {
 
           span {
             display: none;
+          }
+
+          &:hover {
+            @include opacity(.8);
           }
         }
       }
