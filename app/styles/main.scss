@@ -64,6 +64,10 @@ section {
     h2, h3 {
       @include font-size(1.8);
       margin: 0 0 22px;
+
+      @media screen and (max-width: 399px) {
+        margin: 0 0 10px;
+      }
     }
 
     .row {
@@ -444,7 +448,7 @@ section {
     width: 220px;
 
     @media screen and (max-width: 700px) {
-      @include transform(translateY(-80%) translateX(-50%));
+      @include transform(translateY(-50%) translateX(-50%));
       height: 144px;
       left: 50%;
       width: 200px;
@@ -473,6 +477,10 @@ section {
     padding: 0 7%;
     position: relative;
 
+    @media screen and (max-width: 399px) {
+      @include transform(translateY(-50px));
+    }
+
     .row {
       margin: 0;
     }
@@ -490,9 +498,9 @@ section {
     top: 0;
     width: 210px;
 
-    @media screen and (max-width: 401px) {
+    @media screen and (max-width: 399px) {
       left: 8%;
-      top: -40px;
+      top: -31px;
       right: auto;
     }
 
