@@ -25,6 +25,7 @@ body {
   background: $slate;
   color: $carl;
   font-family: $walsheim-reg;
+  position: relative;
 }
 
 .browserupgrade {
@@ -63,263 +64,264 @@ section {
 
     .row {
       margin-bottom: 25px;
-    }
+    
 
-    ul {
-      @include clearfix;
-      margin: 0;
-      padding: 0;
+      ul {
+        @include clearfix;
+        margin: 0;
+        padding: 0;
 
-      li {
-        display: block;
-        float: left;
-        overflow: hidden;
-        padding-top: 30.5%;
-        position: relative;
-        width: 33.3333% ;
-
-        a {
-          @include calc(width, "100% - 22px");
-          -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
-          backface-visibility: hidden;
+        li {
           display: block;
-          height: 100%;
-          left: 0;
+          float: left;
           overflow: hidden;
-          position: absolute;
-          top: 0;
+          padding-top: 30.5%;
+          position: relative;
+          width: 33.3333% ;
 
-          .thumb {
-            @include transition(all .2s ease-in-out);
-            background: white;
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-            height: 68%;
+          a {
+            @include calc(width, "100% - 22px");
+            -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+            backface-visibility: hidden;
+            display: block;
+            height: 100%;
             left: 0;
+            overflow: hidden;
             position: absolute;
             top: 0;
-            width: 100%;
 
-            &:after {
-              @include opacity(0);
-              @include transition(opacity 0.2s ease-in-out);
-              background: rgba($carl, .5);
-              content: "";
-              display: block;
-              height: 100%;
+            .thumb {
+              @include transition(all .2s ease-in-out);
+              background: white;
+              background-repeat: no-repeat;
+              background-position: center center;
+              background-size: cover;
+              height: 68%;
               left: 0;
               position: absolute;
               top: 0;
               width: 100%;
-              z-index: 2;
-            }
 
-            &.ness {
               &:after {
-                background: rgba($ness, .5);
+                @include opacity(0);
+                @include transition(opacity 0.2s ease-in-out);
+                background: rgba($carl, .5);
+                content: "";
+                display: block;
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                z-index: 2;
               }
-            }
 
-            &.pi {
-              &:after {
-                background: rgba($pi, .5);
+              &.ness {
+                &:after {
+                  background: rgba($ness, .5);
+                }
               }
-            }
 
-            &.knox {
-              &:after {
-                background: rgba($knox, .5);
+              &.pi {
+                &:after {
+                  background: rgba($pi, .5);
+                }
               }
-            }
 
-            &.squee {
-              &:after {
-                background: rgba($squee, .5);
+              &.knox {
+                &:after {
+                  background: rgba($knox, .5);
+                }
               }
-            }
 
-            &.baloo {
-              &:after {
-                background: rgba($baloo, .5);
+              &.squee {
+                &:after {
+                  background: rgba($squee, .5);
+                }
               }
-            }
-          }
 
-          .caption {
-            @include transition(all 0.2s ease-out);
-            background: $carl;
-            bottom: 0;
-            display: block;
-            left: 0;
-            padding: 18px 24px;
-            position: absolute;
-            width: 100%;
-            z-index: 3;
-
-            &.ness {
-              background: $ness;
-            }
-            &.baloo {
-              background: $baloo;
-            }
-            &.squee {
-              background: $squee;
-            }
-            &.pi {
-              background: $pi;
-            }
-            &.knox {
-              background: $knox;
-            }
-            &.carl {
-              background: $carl;
-            }
-          }
-
-          .topper {
-            @include clearfix;
-          }
-
-          .cat, .ep {
-            @include font-size(1.2);
-            font-family: $walsheim-light;
-          }
-
-          .cat {
-            color: $slate;
-            float: left;
-          }
-
-          .ep {
-            background: rgba($ness, .2);
-            color: rgba($slate, .6); 
-            float: right;
-            display: block;
-            position: relative;
-            width: 20%;
-
-            summary, mark {
-              position: absolute;
-              top: 0;
-              right: 0;
-            }
-
-            summary {
-              @include transition(all 0.2s ease-in-out);
-              @include opacity(1);
-              @include transform(translateY(0));
-            }
-
-            mark {
-              @include transition(all 0.2s ease-in-out);
-              @include opacity(0);
-              @include transform(translateY(20px));
-              background: url(../images/svg/youtube-play.svg) no-repeat center center;
-              display: block;
-              height: 19px;
-              width: 26px;
-            }
-          }
-
-          .title {
-            @include transition(color 0.2s ease-out);
-            color: white;
-            display: block;
-            font-family: $walsheim-reg;
-            padding: 2px 0 0;
-          }
-
-          &:hover {
-            .thumb {
-              &:after {
-                @include opacity(1);
+              &.baloo {
+                &:after {
+                  background: rgba($baloo, .5);
+                }
               }
             }
 
             .caption {
-              padding: 22px 24px;
+              @include transition(all 0.2s ease-out);
+              background: $carl;
+              bottom: 0;
+              display: block;
+              left: 0;
+              padding: 18px 24px;
+              position: absolute;
+              width: 100%;
+              z-index: 3;
+
+              &.ness {
+                background: $ness;
+              }
+              &.baloo {
+                background: $baloo;
+              }
+              &.squee {
+                background: $squee;
+              }
+              &.pi {
+                background: $pi;
+              }
+              &.knox {
+                background: $knox;
+              }
+              &.carl {
+                background: $carl;
+              }
+            }
+
+            .topper {
+              @include clearfix;
+            }
+
+            .cat, .ep {
+              @include font-size(1.2);
+              font-family: $walsheim-light;
+            }
+
+            .cat {
+              color: $slate;
+              float: left;
+            }
+
+            .ep {
+              background: rgba($ness, .2);
+              color: rgba($slate, .6); 
+              float: right;
+              display: block;
+              position: relative;
+              width: 20%;
+
+              summary, mark {
+                position: absolute;
+                top: 0;
+                right: 0;
+              }
 
               summary {
-                @include opacity(0);
-                @include transform(translateY(-20px));
+                @include transition(all 0.2s ease-in-out);
+                @include opacity(1);
+                @include transform(translateY(0));
               }
 
               mark {
-                @include opacity(1);
-                @include transform(translateY(-1px));
+                @include transition(all 0.2s ease-in-out);
+                @include opacity(0);
+                @include transform(translateY(20px));
+                background: url(../images/svg/youtube-play.svg) no-repeat center center;
+                display: block;
+                height: 19px;
+                width: 26px;
               }
             }
-          }
 
-        }
-
-        &:nth-child(2) {
-          a {
-            @include calc(width, "100% - 11px");
-            @include transform(translateX(-50%));
-            left: 50%;
-
-            .thumb {
-              width: 99.9%;
+            .title {
+              @include transition(color 0.2s ease-out);
+              color: white;
+              display: block;
+              font-family: $walsheim-reg;
+              padding: 2px 0 0;
             }
 
-            .caption {
-              width: 100.3%;
+            &:hover {
+              .thumb {
+                &:after {
+                  @include opacity(1);
+                }
+              }
+
+              .caption {
+                padding: 22px 24px;
+
+                summary {
+                  @include opacity(0);
+                  @include transform(translateY(-20px));
+                }
+
+                mark {
+                  @include opacity(1);
+                  @include transform(translateY(-1px));
+                }
+              }
             }
-          }  
-        }
 
-        &:nth-child(3) {
-          a {
-            left: auto;
-            right: 0;
-          }
-        }
-
-        @media screen and (min-width: 1500px) {
-          a {
-            .thumb {
-              height: 100%;
-            }
-          } 
-        }
-
-        @media screen and (min-width: 1100px) and (max-width: 1499px) {
-          a {
-            .thumb {
-              height: 85%;
-            }
-          } 
-        }
-
-        @media screen and (max-width: 700px) {
-          float: none;
-          padding-top: 80%;
-          position: relative;
-          margin-bottom: 25px;
-          width: 100%;
-
-          a {
-            left: 0;
-            right: auto;
-            top: 0;
-            width: 100% !important;
-
-            .thumb {
-              height: 85%;
-            }
           }
 
           &:nth-child(2) {
             a {
-              @include transform(translateX(0));
-              left: auto;
+              @include calc(width, "100% - 11px");
+              @include transform(translateX(-50%));
+              left: 50%;
+
+              .thumb {
+                width: 99.9%;
+              }
+
+              .caption {
+                width: 100.3%;
+              }
             }  
           }
 
           &:nth-child(3) {
-            margin-bottom: 0;
+            a {
+              left: auto;
+              right: 0;
+            }
+          }
+
+          @media screen and (min-width: 1500px) {
+            a {
+              .thumb {
+                height: 100%;
+              }
+            } 
+          }
+
+          @media screen and (min-width: 1100px) and (max-width: 1499px) {
+            a {
+              .thumb {
+                height: 85%;
+              }
+            } 
+          }
+
+          @media screen and (max-width: 700px) {
+            float: none;
+            padding-top: 80%;
+            position: relative;
+            margin-bottom: 25px;
+            width: 100%;
+
+            a {
+              left: 0;
+              right: auto;
+              top: 0;
+              width: 100% !important;
+
+              .thumb {
+                height: 85%;
+              }
+            }
+
+            &:nth-child(2) {
+              a {
+                @include transform(translateX(0));
+                left: auto;
+              }  
+            }
+
+            &:nth-child(3) {
+              margin-bottom: 0;
+            }
           }
         }
       }
@@ -327,6 +329,25 @@ section {
   }
 }
 
+.modal {
+  background: rgba(black, .85);
+  display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+
+  img {
+    @include transform(translateX(-50%) translateY(-50%));
+    height: auto;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    width: 30%;
+  }
+}
 
 .hero {
   background: url('../images/hero.jpg') no-repeat center center;
@@ -350,7 +371,6 @@ section {
 
 
   }
-
 
   .cut-logo {
     @include transform(translateY(-50%));
@@ -409,11 +429,59 @@ section {
     display: inline-block;
   }
 
-  .g-ytsubscribe, #___ytsubscribe_0 {
+  .social-container {
+    height: 22px;
     position: absolute;
-    top: 0;
     right: 8%;
+    top: 0;
+    width: 70%;
+
+    .g-ytsubscribe, #___ytsubscribe_0 {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .social-menu {
+      display: block;
+      height: 22px;
+      margin: 0;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      right: 133px;
+      top: 1px;
+      width: 200px;
+      z-index: 2;
+
+      li {
+        display: block;
+        float: right;
+        height: 22px;
+        margin-left: 7px;
+        margin-bottom: 0;
+        list-style: none;
+        width: 22px;
+
+        a {
+          display: inline-block;
+          height: 100%;
+          width: 100%;
+
+          img {
+            height: auto;
+            width: 100%;
+          }
+
+          span {
+            display: none;
+          }
+        }
+      }
+    }
   }
+
+  
   
 
 }

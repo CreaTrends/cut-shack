@@ -29,6 +29,9 @@
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <div class="modal">
+      <img src="images/svg/david-snapcode.svg">
+    </div>
     
     <header class="hero">
       <div class="center">
@@ -39,8 +42,15 @@
     <section class="highlights">
       <div class="center">
         <h2>Highlights</h2>
-        <script src="https://apis.google.com/js/platform.js"></script>
-        <div class="g-ytsubscribe" data-channel="WatchCut" data-layout="default" data-count="default"></div>
+        <div class="social-container">
+          <script src="https://apis.google.com/js/platform.js"></script>
+          <div class="g-ytsubscribe" data-channel="WatchCut" data-layout="default" data-count="default"></div>
+          <ul class="social-menu">
+            <li class="snapchat"><a href="#"><img src="images/svg/snapchat.svg" target="_blank"><span>snapchat</span></a></li>
+            <li class="twitter"><a href="https://twitter.com/watchcut" target="_blank"><img src="images/svg/twitter.svg" target="_blank"><span>twitter</span></a></li>
+            <li class="facebook"><a href="https://www.facebook.com/storiesbycut" target="_blank"><img src="images/svg/facebook.svg"><span>facebook</span></a></li>
+          </ul>
+        </div>
         <div class="row">
           <ul>
             <li>
@@ -286,7 +296,7 @@
       ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
 
-    <!--<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="scripts/main.js"></script>-->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="scripts/main.js"></script>
   </body>
 </html>
