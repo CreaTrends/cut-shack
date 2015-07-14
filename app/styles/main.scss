@@ -57,6 +57,10 @@ section {
       width: 100%;
     }
 
+    @media screen and (max-width: 400px) {
+      padding: 0 15px;
+    }
+
     h2, h3 {
       @include font-size(1.8);
       margin: 0 0 22px;
@@ -96,7 +100,7 @@ section {
               background-repeat: no-repeat;
               background-position: center center;
               background-size: cover;
-              height: 68%;
+              height: 70%;
               left: 0;
               position: absolute;
               top: 0;
@@ -546,6 +550,20 @@ section {
         }
       }
     }
+
+    // @media screen and (max-width: 400px) {
+    //   height: 54px;
+    //   top: -15px;
+
+    //   .g-ytsubscribe, #___ytsubscribe_0 {
+    //     bottom: 0;
+    //     top: auto;
+    //   }
+
+    //   .social-menu {
+    //     right: 0;
+    //   }
+    // }
   }
 
   
