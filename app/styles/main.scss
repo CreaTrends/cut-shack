@@ -436,19 +436,19 @@ section {
   }
 
   .cut-logo {
-    @include transform(translateY(-50%));
+    @include transform(translateY(-50%) translateX(-63%));
     @include transition(opacity 0.2s ease-in-out);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     display: block;
     height: 158px;
-    left: 7%;
+    left: 50%;
     position: absolute;
     top: 50%;
     width: 220px;
 
     @media screen and (max-width: 700px) {
-      @include transform(translateY(-50%) translateX(-50%));
+      @include transform(translateY(-50%) translateX(-63%));
       height: 144px;
       left: 50%;
       width: 200px;
