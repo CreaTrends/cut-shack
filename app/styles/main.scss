@@ -438,21 +438,16 @@ section {
     backface-visibility: hidden;
     display: block;
     height: 158px;
-    right: 7%;
+    left: 7%;
     position: absolute;
     top: 50%;
     width: 220px;
 
-    @media screen and (max-width: 780px) {
-      right: 20px;
-    }
-
     @media screen and (max-width: 700px) {
-      @include transform(translateY(-50%));
-      height: 108px;
-      left: 8%;
-      right: auto;
-      width: 150px;
+      @include transform(translateY(-80%) translateX(-50%));
+      height: 144px;
+      left: 50%;
+      width: 200px;
     }
 
     img {
