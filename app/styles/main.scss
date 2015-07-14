@@ -433,7 +433,7 @@ section {
   background: url('../images/hero.jpg') no-repeat center top;
   background-attachment: fixed;
   background-size: 110% auto;
-  height: 500px;
+  height: 600px;
   position: relative;
 
   @media screen and (min-width: 1200px) {
@@ -449,7 +449,7 @@ section {
   }
 
   @media screen and (max-width: 700px) {
-    background-size: 145% auto;
+    background-size: 135% auto;
     height: 370px;
   }
 
@@ -457,8 +457,8 @@ section {
     background-size: 165% auto;
   }
 
-  @media screen and (max-width: 400px) {
-    // height: 480px;
+  @media screen and (max-width: 399px) {
+    height: 400px;
     background-size: 265% auto;
   }
 
@@ -467,30 +467,30 @@ section {
     background-size: 100% auto;
     background-attachment: fixed;
 
-    @media screen and (min-width: 1200px) {
-      background-size: 100% auto;
-    }
+    // @media screen and (min-width: 1200px) {
+    //   background-size: 100% auto;
+    // }
 
-    @media screen and (max-width: 1000px) {
-      background-size: 130% auto;
-    }
+    // @media screen and (max-width: 1000px) {
+    //   background-size: 130% auto;
+    // }
 
-    @media screen and (max-width: 800px) {
-      background-size: 145% auto;
-    }
+    // @media screen and (max-width: 800px) {
+    //   background-size: 145% auto;
+    // }
 
-    @media screen and (max-width: 700px) {
-      background-size: 135% auto;
-      height: 370px;
-    }
+    // @media screen and (max-width: 700px) {
+    //   background-size: 135% auto;
+    //   height: 370px;
+    // }
 
-    @media screen and (max-width: 550px) {
-      background-size: 165% auto;
-    }
+    // @media screen and (max-width: 550px) {
+    //   background-size: 165% auto;
+    // }
 
     @media screen and (max-width: 400px) {
-      // height: 480px;
-      background-size: 265% auto;
+      height: 400px;
+      background-size: 200% auto;
     }
   }
 
