@@ -392,15 +392,17 @@ section {
       width: 22px;
 
       a {
-        @include transition(all .2s ease-in-out);
-        @include opacity(1);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
         display: inline-block;
         height: 100%;
         width: 100%;
 
         img {
-          height: auto;
-          width: 100%;
+          @include transition(all .2s ease-in-out);
+          @include opacity(1);
+          height: 22px;
+          width: 22px;
         }
 
         span {
@@ -408,7 +410,9 @@ section {
         }
 
         &:hover {
-          @include opacity(.8);
+          img {
+            @include opacity(.8);
+          }
         }
       }
     }
