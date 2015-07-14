@@ -357,6 +357,78 @@ section {
   }
 }
 
+.social-container {
+  height: 22px;
+  position: absolute;
+  right: 7%;
+  top: 7%;
+  width: 210px;
+
+  .g-ytsubscribe, #___ytsubscribe_0 {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .social-menu {
+    display: block;
+    height: 22px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    right: 133px;
+    top: 1px;
+    width: 200px;
+    z-index: 2;
+
+    li {
+      display: block;
+      float: right;
+      height: 22px;
+      margin-left: 7px;
+      margin-bottom: 0;
+      list-style: none;
+      width: 22px;
+
+      a {
+        @include transition(all .2s ease-in-out);
+        @include opacity(1);
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+
+        img {
+          height: auto;
+          width: 100%;
+        }
+
+        span {
+          display: none;
+        }
+
+        &:hover {
+          @include opacity(.8);
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 399px) {
+    height: 54px;
+
+    .g-ytsubscribe, #___ytsubscribe_0 {
+      top: 0;
+      bottom: auto;
+    }
+
+    .social-menu {
+      top: 35px;
+      right: 0;
+    }
+  }
+}
+
 .hero {
   background: url('../images/hero.jpg') no-repeat center top;
   background-attachment: fixed;
@@ -436,23 +508,23 @@ section {
   }
 
   .cut-logo {
-    @include transform(translateY(-50%) translateX(-63%));
+    // @include transform(translateY(-50%) translateX(-63%));
     @include transition(opacity 0.2s ease-in-out);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     display: block;
-    height: 158px;
-    left: 50%;
+    height: 50px;
+    left: 7%;
     position: absolute;
-    top: 50%;
-    width: 220px;
+    top: 7%;
+    width: 50px;
 
-    @media screen and (max-width: 700px) {
-      @include transform(translateY(-50%) translateX(-63%));
-      height: 158px;
-      left: 50%;
-      width: 220px;
-    }
+    // @media screen and (max-width: 700px) {
+    //   // @include transform(translateY(-50%) translateX(-63%));
+    //   height: 79px;
+    //   // left: 50%;
+    //   width: 110px;
+    // }
 
     img {
       width: 100%;
@@ -490,88 +562,6 @@ section {
     color: white;
     display: inline-block;
   }
-
-  .social-container {
-    height: 22px;
-    position: absolute;
-    right: 8%;
-    top: 0;
-    width: 210px;
-
-    @media screen and (max-width: 399px) {
-      left: 8%;
-      top: -31px;
-      right: auto;
-    }
-
-    .g-ytsubscribe, #___ytsubscribe_0 {
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
-
-    .social-menu {
-      display: block;
-      height: 22px;
-      margin: 0;
-      overflow: hidden;
-      padding: 0;
-      position: absolute;
-      right: 133px;
-      top: 1px;
-      width: 200px;
-      z-index: 2;
-
-      li {
-        display: block;
-        float: right;
-        height: 22px;
-        margin-left: 7px;
-        margin-bottom: 0;
-        list-style: none;
-        width: 22px;
-
-        a {
-          @include transition(all .2s ease-in-out);
-          @include opacity(1);
-          display: inline-block;
-          height: 100%;
-          width: 100%;
-
-          img {
-            height: auto;
-            width: 100%;
-          }
-
-          span {
-            display: none;
-          }
-
-          &:hover {
-            @include opacity(.8);
-          }
-        }
-      }
-    }
-
-    // @media screen and (max-width: 400px) {
-    //   height: 54px;
-    //   top: -15px;
-
-    //   .g-ytsubscribe, #___ytsubscribe_0 {
-    //     bottom: 0;
-    //     top: auto;
-    //   }
-
-    //   .social-menu {
-    //     right: 0;
-    //   }
-    // }
-  }
-
-  
-  
-
 }
 
 .series {
