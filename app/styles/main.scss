@@ -436,7 +436,7 @@ section {
     height: 158px;
     right: 7%;
     position: absolute;
-    top: 45%;
+    top: 50%;
     width: 220px;
 
     @media screen and (max-width: 780px) {
@@ -444,7 +444,7 @@ section {
     }
 
     @media screen and (max-width: 700px) {
-      @include transform(translateY(-65%));
+      @include transform(translateY(-50%));
       height: 108px;
       left: 8%;
       right: auto;
