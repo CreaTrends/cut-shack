@@ -350,17 +350,36 @@ section {
 }
 
 .hero {
-  background: url('../images/hero.jpg') no-repeat center center;
-  background-size: cover;
+  background: url('../images/hero.jpg') no-repeat center top;
+  background-attachment: fixed;
+  background-size: 110% auto;
   height: 500px;
   position: relative;
 
+  @media screen and (min-width: 1200px) {
+    background-size: 100% auto;
+  }
+
+  @media screen and (max-width: 1000px) {
+    background-size: 125% auto;
+  }
+
+  @media screen and (max-width: 800px) {
+    background-size: 145% auto;
+  }
+
   @media screen and (max-width: 700px) {
+    background-size: 145% auto;
     height: 370px;
+  }
+
+  @media screen and (max-width: 550px) {
+    background-size: 165% auto;
   }
 
   @media screen and (max-width: 400px) {
     height: 480px;
+    background-size: 265% auto;
   }
 
   .center {
