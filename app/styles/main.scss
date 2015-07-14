@@ -359,6 +359,10 @@ section {
     height: 370px;
   }
 
+  @media screen and (max-width: 400px) {
+    height: 480px;
+  }
+
   .center {
     height: 100%;
     margin: 0 auto;
@@ -434,7 +438,13 @@ section {
     position: absolute;
     right: 8%;
     top: 0;
-    width: 70%;
+    width: 210px;
+
+    @media screen and (max-width: 401px) {
+      left: 8%;
+      top: -40px;
+      right: auto;
+    }
 
     .g-ytsubscribe, #___ytsubscribe_0 {
       position: absolute;
@@ -510,6 +520,10 @@ section {
     margin: 0 auto;
     width: 325px;
     text-align: center;
+
+    @media screen and (max-width: 550px) {
+      width: 90%;
+    }
 
     .baloo-text, .slate-text {
       display: block;
