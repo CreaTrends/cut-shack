@@ -433,7 +433,7 @@ section {
   background: url('../images/hero.jpg') no-repeat center top;
   background-attachment: fixed;
   background-size: 110% auto;
-  height: 600px;
+  height: 450px;
   position: relative;
 
   @media screen and (min-width: 1200px) {
@@ -446,11 +446,12 @@ section {
 
   @media screen and (max-width: 800px) {
     background-size: 145% auto;
+    height: 400px;
   }
 
   @media screen and (max-width: 700px) {
     background-size: 135% auto;
-    height: 370px;
+    height: 250px;
   }
 
   @media screen and (max-width: 550px) {
@@ -458,39 +459,40 @@ section {
   }
 
   @media screen and (max-width: 399px) {
-    height: 400px;
+    height: 300px;
     background-size: 265% auto;
   }
 
   &.alt {
     background: url('../images/hero-alt.jpg') no-repeat center top;
-    background-size: 100% auto;
+    background-size: 120% auto;
     background-attachment: fixed;
 
-    // @media screen and (min-width: 1200px) {
-    //   background-size: 100% auto;
-    // }
+    @media screen and (min-width: 1200px) {
+      background-size: 100% auto;
+    }
 
-    // @media screen and (max-width: 1000px) {
-    //   background-size: 130% auto;
-    // }
+    @media screen and (max-width: 1000px) {
+      background-size: 125% auto;
+    }
 
-    // @media screen and (max-width: 800px) {
-    //   background-size: 145% auto;
-    // }
-
-    // @media screen and (max-width: 700px) {
-    //   background-size: 135% auto;
-    //   height: 370px;
-    // }
-
-    // @media screen and (max-width: 550px) {
-    //   background-size: 165% auto;
-    // }
-
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: 800px) {
+      background-size: 145% auto;
       height: 400px;
-      background-size: 200% auto;
+    }
+
+    @media screen and (max-width: 700px) {
+      background-size: 115% auto;
+      height: 250px;
+    }
+
+    @media screen and (max-width: 550px) {
+      background-size: 155% auto;
+    }
+
+    @media screen and (max-width: 399px) {
+      height: 300px;
+      background-size: 265% auto;
     }
   }
 
