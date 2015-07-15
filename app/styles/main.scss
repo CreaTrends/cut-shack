@@ -374,32 +374,80 @@ section {
 
   .form-holder {
     @include transform(translateX(-50%) translateY(-50%));
-    // background: white;
     left: 50%;
-    // padding: 25px;
     position: absolute;
     top: 50%;
-    width: 400px;
-
-    h4 {
-      margin: 0;
-      text-align: center;
-    }
-
-    input {
-      width: 100%;
-
-      &[type="email"] {
-        text-align: center;
-      }
-    }
+    width: 70%;
   }
 }
 
 .email-signup-box {
   background: url(../images/signup.jpg) no-repeat center center;
   background-size: cover;
-  padding: 30px;
+  padding: 50px 40px 40px 34%;
+
+  $textpad: 25px;
+  h4 {
+    @include font-size(3.6);
+    color: white;
+    font-family: $walsheim-bold;
+    margin: 0;
+    padding: 0 $textpad;
+  }
+
+  p {
+    margin: 7px 0 22px;
+    padding: 0 $textpad;
+  }
+
+  form {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background: white;
+    padding: 20px;
+    position: relative;
+  }
+
+  input {
+    width: 100%;
+
+    &[type="email"] {
+      @include font-size(1.8);
+      border: {
+        top: none;
+        left: none;
+        right: none;
+        bottom: 1px solid #979797;
+      }
+      color: $slate;
+      height: 40px;
+      outline: none;
+      padding: 12px 0;
+      width: 85%;
+      // text-align: center;
+    }
+
+    $btsiz: 78px;
+    &[type="submit"] {
+      @include font-size(2.4);
+      @include transform(rotate(-29deg));
+      @include transition(all .2s ease-in-out);
+      background: $ness;
+      border: none;
+      border-radius: 50%;
+      color: white;
+      cursor: pointer;
+      height: $btsiz;
+      position: absolute;
+      bottom: -25px;
+      right: -25px;
+      width: $btsiz;
+
+      &:hover {
+        @include transform(scale(1.1) rotate(-29deg));
+      }
+    }
+  }
 }
 
 .social-container {

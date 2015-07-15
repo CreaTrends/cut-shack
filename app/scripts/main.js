@@ -78,6 +78,7 @@ function listTry() {
         createCookie('listSignup', true);
     } else {
         console.log(readCookie('listSignup'));
+        // do nothing
     }
 }
 
@@ -105,7 +106,13 @@ $(document).ready(function() {
         }
     });
 
-    setTimeout(listTry, 2000);
+    $('.form-holder').click(function(e) {
+        e.stopPropagation();
+
+        console.log('no close');
+    });
+
+    setTimeout(listTry, 10000);
 });
 
 
