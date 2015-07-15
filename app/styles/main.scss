@@ -360,7 +360,7 @@ section {
 .social-container {
   height: 22px;
   position: absolute;
-  right: 7%;
+  right: 8%;
   top: 7%;
   width: 210px;
 
@@ -438,17 +438,37 @@ section {
   overflow: hidden;
   position: relative;
 
-  &:before {
-    content: ' ';
-    position: fixed; // instead of background-attachment
-    width: 100%;
+  .herovid {
+    background: yellow;
     height: 450px;
-    top: 0;
     left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    will-change: transform;
+
+    .player {
+      @include transform(translateX(-50%) translateY(-50%));
+      left: 50%;
+      min-height: 100%;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+    }
+  }
+
+  &:before {
     background-color: white;
     background-image: url('../images/hero.jpg');
     background-position: center center;
     background-size: cover;
+    content: ' ';
+    height: 450px;
+    left: 0;
+    position: fixed; // instead of background-attachment
+    top: 0;
+    width: 100%;
     will-change: transform; // creates a new paint layer
     z-index: -1;
   }
@@ -472,7 +492,7 @@ section {
     backface-visibility: hidden;
     display: block;
     height: 50px;
-    left: 7%;
+    left: 8%;
     position: absolute;
     top: 7%;
     width: 130px;
