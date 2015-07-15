@@ -475,7 +475,11 @@ section {
     left: 7%;
     position: absolute;
     top: 7%;
-    width: 50px;
+    width: 130px;
+
+    @media screen and (max-width: 1000px) {
+      width: 100px;
+    }
 
     img {
       width: 100%;
