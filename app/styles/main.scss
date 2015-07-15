@@ -454,7 +454,8 @@ section {
       min-height: 100%;
       position: absolute;
       top: 50%;
-      width: 100%;
+      width: auto;
+      min-width: 100%;
     }
   }
 
