@@ -26,6 +26,11 @@ body {
   color: $carl;
   font-family: $walsheim-reg;
   position: relative;
+
+  &.lock {
+    height: 100%;
+    overflow: hidden;
+  }
 }
 
 .browserupgrade {
@@ -357,6 +362,40 @@ section {
   }
 }
 
+.signup-modal {
+  background: rgba($ness, .85);
+  // display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+
+  .form-holder {
+    @include transform(translateX(-50%) translateY(-50%));
+    background: white;
+    left: 50%;
+    padding: 25px;
+    position: absolute;
+    top: 50%;
+    width: 400px;
+
+    h4 {
+      margin: 0;
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+
+      &[type="email"] {
+        text-align: center;
+      }
+    }
+  }
+}
+
 .social-container {
   height: 22px;
   position: absolute;
@@ -444,7 +483,7 @@ section {
     left: 0;
     position: fixed;
     width: 100%;
-    z-index: -1;
+    z-index: 0;
     top: 0;
     will-change: transform;
 
