@@ -29,6 +29,33 @@ var modalOperator = {
         $('body').removeClass('lock');
 
         $('.signup-modal .form-holder').removeClass('animate');
+
+
+        // cookie stuff
+
+        var cookie = readCookie('listSignup');
+
+
+        if (cookie === null) {
+            // if list sign up cookie doesn't exist, check for perma or add cookie
+            console.log('no cookie');
+
+            modalOperator.openEmail();
+
+            var permo = readCookie('permaCookie');
+            
+            if (permo === null) {
+                createCookie('permaCookie', true, 9000);
+            } else {
+                createCookie('listSignup', true, 9000);
+            }
+
+        } else {
+            // if it does, check for permacookie
+            console.log(readCookie('permaCookie'));
+            createCookie('permaCookie', true, 9000);
+            
+        }
     }
 };
 
@@ -79,9 +106,6 @@ function listTry() {
         modalOperator.openEmail();
 
         createCookie('listSignup', true, 30);
-    } else {
-        console.log(readCookie('listSignup'));
-        // do nothing
     }
 }
 
@@ -111,21 +135,23 @@ $(document).ready(function() {
 
     $('.form-holder').click(function(e) {
         e.stopPropagation();
-
-        console.log('no close');
     });
 
     $('.form-holder .close').click(function(e) {
         e.stopPropagation();
         e.preventDefault();
 
-        createCookie('listSignup', true, 30);
         modalOperator.closeEmail();
+
     });
 
     $('.form-holder input[type="submit"]').click(function() {
-        createCookie('listSignup', true, 30);
+        createCookie('listSignup', true, 9000);
         modalOperator.closeEmail();
+    });
+
+    $('.highlights .email-signup-box input[type="submit"]').click(function() {
+        createCookie('listSignup', true, 9000);
     });
 
     setTimeout(listTry, 10000);
