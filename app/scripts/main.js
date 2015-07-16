@@ -69,7 +69,7 @@ function eraseCookie(name) {
 function listTry() {
 
     //erase this
-    eraseCookie('listSignup');
+    // eraseCookie('listSignup');
 
     var cookie = readCookie('listSignup');
 
@@ -78,7 +78,7 @@ function listTry() {
 
         modalOperator.openEmail();
 
-        createCookie('listSignup', true);
+        createCookie('listSignup', true, 30);
     } else {
         console.log(readCookie('listSignup'));
         // do nothing
@@ -119,16 +119,14 @@ $(document).ready(function() {
         e.stopPropagation();
         e.preventDefault();
 
-        createCookie('listSignup', true);
+        createCookie('listSignup', true, 30);
         modalOperator.closeEmail();
     });
 
-    $('.form-holder input[type="submit"]').click(function(e) {
-        createCookie('listSignup', true);
+    $('.form-holder input[type="submit"]').click(function() {
+        createCookie('listSignup', true, 30);
         modalOperator.closeEmail();
     });
-
-    
 
     setTimeout(listTry, 10000);
 });
