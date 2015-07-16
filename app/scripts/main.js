@@ -89,9 +89,10 @@ function readCookie(name) {
     return null;
 }
 
-function eraseCookie(name) {
-    createCookie(name, '', -1);
-}
+// not needed for now
+// function eraseCookie(name) {
+//     createCookie(name, '', -1);
+// }
 
 function listTry() {
 
