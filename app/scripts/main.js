@@ -10,6 +10,36 @@ if (Modernizr.touch) {
   isTouch = false;
 }
 
+function createCookie(name, value, days) {
+    if (days) {
+        var date = new Date();
+        var expires;
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = '; expires=' + date.toGMTString();
+    } else {
+        expires = '';
+    }
+    document.cookie = name + '=' + value + expires + '; path=/';
+}
+
+function readCookie(name) {
+    var nameEQ = name + '=';
+    var ca = document.cookie.split(';');
+
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+
+        while (c.charAt(0) === ' ') {
+            c = c.substring(1, c.length);
+        }
+
+        if (c.indexOf(nameEQ) === 0) {
+            return c.substring(nameEQ.length, c.length);
+        }
+    }
+    return null;
+}
+
 var modalOperator = {
     open: function() {
         $('.modal').fadeIn(300);
@@ -43,7 +73,7 @@ var modalOperator = {
             modalOperator.openEmail();
 
             var permo = readCookie('permaCookie');
-            
+
             if (permo === null) {
                 createCookie('permaCookie', true, 9000);
             } else {
@@ -54,40 +84,11 @@ var modalOperator = {
             // if it does, check for permacookie
             console.log(readCookie('permaCookie'));
             createCookie('permaCookie', true, 9000);
-            
         }
     }
 };
 
-function createCookie(name, value, days) {
-    if (days) {
-        var date = new Date();
-        var expires;
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        expires = '; expires=' + date.toGMTString();
-    } else {
-        expires = '';
-    }
-    document.cookie = name + '=' + value + expires + '; path=/';
-}
 
-function readCookie(name) {
-    var nameEQ = name + '=';
-    var ca = document.cookie.split(';');
-
-    for(var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-
-        while (c.charAt(0) === ' ') {
-            c = c.substring(1, c.length);
-        }
-
-        if (c.indexOf(nameEQ) === 0) {
-            return c.substring(nameEQ.length, c.length);
-        }
-    }
-    return null;
-}
 
 // not needed for now
 // function eraseCookie(name) {
