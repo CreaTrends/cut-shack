@@ -12,20 +12,23 @@ if (Modernizr.touch) {
 
 var modalOperator = {
     open: function() {
-        $('.modal').fadeIn(200);
+        $('.modal').fadeIn(300);
         $('body').addClass('lock');
     },
     close: function() {
-        $('.modal').fadeOut(200);
+        $('.modal').fadeOut(300);
         $('body').removeClass('lock');
     },
     openEmail: function() {
         $('.signup-modal').fadeIn(200);
+        $('.signup-modal .form-holder').addClass('animate');
         $('body').addClass('lock');
     },
     closeEmail: function() {
-        $('.signup-modal').fadeOut(200);
+        $('.signup-modal').fadeOut(300);
         $('body').removeClass('lock');
+
+        $('.signup-modal .form-holder').removeClass('animate');
     }
 };
 
@@ -111,6 +114,21 @@ $(document).ready(function() {
 
         console.log('no close');
     });
+
+    $('.form-holder .close').click(function(e) {
+        e.stopPropagation();
+        e.preventDefault();
+
+        createCookie('listSignup', true);
+        modalOperator.closeEmail();
+    });
+
+    $('.form-holder input[type="submit"]').click(function(e) {
+        createCookie('listSignup', true);
+        modalOperator.closeEmail();
+    });
+
+    
 
     setTimeout(listTry, 10000);
 });

@@ -362,6 +362,18 @@ section {
   }
 }
 
+@include keyframes(modalPop) {
+  0% {
+    @include transform(translateX(-50%) translateY(-80%));
+    @include opacity(0);
+  }
+
+  100% {
+    @include transform(translateX(-50%) translateY(-50%));
+    @include opacity(1);
+  }
+}
+
 .signup-modal {
   background: rgba($ness, .85);
   display: none;
@@ -379,6 +391,10 @@ section {
     top: 50%;
     width: 75%;
 
+    &.animate {
+      @include animation(modalPop .4s ease-out);
+    }
+
     @media screen and (max-width: 960px) {
       width: 90%;
     }
@@ -386,6 +402,33 @@ section {
     @media screen and (max-width: 776px) {
       width: 90%;
 
+    }
+
+    .close {
+      @include transform(translateX(15px) translateY(-15px));
+      @include transition(all 0.2s ease-in-out);
+      background: $slate;
+      border-radius: 50%;
+      color: white;
+      height: 30px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 30px;
+
+      &:after {
+        @include transform(translateX(-50%) translateY(-50%));
+        content: '✖';
+        display: block;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        
+      }
+
+      &:hover {
+        background: #444;
+      }
     }
   }
 }
@@ -410,6 +453,7 @@ section {
   }
 
   p {
+    color: white;
     margin: 7px 0 22px;
     padding: 0 $textpad;
   }
@@ -423,6 +467,7 @@ section {
   }
 
   input {
+    -webkit-appearance: none;
     width: 100%;
 
     &[type="email"] {
@@ -433,19 +478,19 @@ section {
         right: none;
         bottom: 1px solid #979797;
       }
+      border-radius: none;
       color: $slate;
       height: 40px;
       outline: none;
       padding: 12px 0;
       width: 85%;
-      // text-align: center;
     }
 
     $btsiz: 78px;
     &[type="submit"] {
       @include font-size(2.4);
       @include transform(rotate(-29deg));
-      @include transition(all .2s ease-in-out);
+      @include transition(all .1s ease-in-out);
       background: $ness;
       border: none;
       border-radius: 50%;
@@ -546,7 +591,6 @@ section {
   position: relative;
 
   .herovid {
-    background: yellow;
     height: 450px;
     left: 0;
     position: fixed;
@@ -655,7 +699,7 @@ section {
 
 .series {
   background: $slate;
-  margin-top: -50px;
+  margin-top: -30px;
   padding-bottom: 65px;
   z-index: 5;
   
