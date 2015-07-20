@@ -68,7 +68,7 @@ var modalOperator = {
 
         if (cookie === null) {
             // if list sign up cookie doesn't exist, check for perma or add cookie
-            console.log('no cookie');
+            // console.log('no cookie');
 
             modalOperator.openEmail();
 
@@ -82,7 +82,7 @@ var modalOperator = {
 
         } else {
             // if it does, check for permacookie
-            console.log(readCookie('permaCookie'));
+            // console.log(readCookie('permaCookie'));
             createCookie('permaCookie', true, 9000);
         }
     }
@@ -103,7 +103,7 @@ function listTry() {
     var cookie = readCookie('listSignup');
 
     if (cookie === null) {
-        console.log('no cookie');
+        // console.log('no cookie');
 
         modalOperator.openEmail();
 
@@ -114,7 +114,7 @@ function listTry() {
 
 $(document).ready(function() {
     if (isTouch === true) {
-        $('.herovid').remove();
+        // $('.herovid').remove();
     }
 
     $('.snapchat a').click(function(e){

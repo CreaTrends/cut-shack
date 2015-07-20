@@ -274,13 +274,15 @@ section {
               @include transform(translateX(-50%));
               left: 50%;
 
-              .thumb {
-                width: 99.9%;
-              }
+              // .thumb {
+              //   width: 99.9%;
+              //   width: 100%;
+              // }
 
-              .caption {
-                width: 100.3%;
-              }
+              // .caption {
+              //   width: 100.3%;
+              //   width: 100%;
+              // }
             }  
           }
 
