@@ -43,16 +43,29 @@ function lint(files, options) {
 }
 const testLintOptions = {
   env: {
+    jquery: true,
+    node: true,
     mocha: true
   },
   globals: {
     assert: false,
     expect: false,
-    should: false
+    should: false,
+    Modernizr: true
   }
 };
 
-gulp.task('lint', lint('app/scripts/**/*.js'));
+const lintOptions = {
+  env: {
+    jquery: true,
+    node: true
+  },
+  globals: {
+    Modernizr: true
+  }
+};
+
+gulp.task('lint', lint('app/scripts/**/*.js', lintOptions));
 gulp.task('lint:test', lint('test/spec/**/*.js', testLintOptions));
 
 gulp.task('html', ['styles'], () => {

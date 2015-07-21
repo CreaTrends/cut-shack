@@ -1,5 +1,3 @@
-/*eslint-env node, jquery */
-/*global Modernizr:true*/
 
 'use strict';
 
